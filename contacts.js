@@ -33,7 +33,7 @@ async function addContact(name, email, phone) {
 	const newContact = { id: nanoid(), name, email, phone };
 	data.push(newContact);
 	await fs.writeFile(contactsPath, JSON.stringify(data, null, 2));
-	return newContact || null; // (if error add -> null)
+	return newContact;
 }
 
 module.exports = {
